@@ -1,0 +1,6 @@
+@TCCtech_MyTest_Server_HostAddress = http://localhost:5095
+
+GET {{TCCtech_MyTest_Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
