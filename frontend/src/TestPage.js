@@ -35,7 +35,7 @@ function TestPage() {
       highlightAnswers.q1 = "incorrect";
     }
 
-    if (answers.q2 === "15") {
+    if (answers.q2 === "2") {
       calculatedScore += 1;
       highlightAnswers.q2 = "correct";
     } else {
@@ -103,7 +103,7 @@ function TestPage() {
 
       {/* Name Field */}
       <TextField
-        label="Name"
+        label="ชื่อ-สกุล"
         value={name}
         onChange={(e) => setName(e.target.value)}
         fullWidth
@@ -115,7 +115,7 @@ function TestPage() {
       {/* Question 1 */}
       <FormControl component="fieldset" sx={{ marginBottom: 2 }}>
         <FormLabel component="legend">
-          1. Which one is different from the others?
+          1. ข้อใดต่างจากข้ออื่น
         </FormLabel>
         <RadioGroup
           value={answers.q1}
@@ -156,7 +156,7 @@ function TestPage() {
       {/* Question 2 */}
       <FormControl component="fieldset" sx={{ marginBottom: 2 }}>
         <FormLabel component="legend">
-          2. Which one is different from the others?
+          2. X + 2 = 4 จงหาค่า X
         </FormLabel>
         <RadioGroup
           value={answers.q2}
@@ -165,27 +165,27 @@ function TestPage() {
         >
           <FormControlLabel
             disabled={submitted}
-            value="11"
+            value="1"
             control={<Radio />}
-            label="11"
+            label="1"
           />
           <FormControlLabel
             disabled={submitted}
-            value="13"
+            value="2"
             control={<Radio />}
-            label="13"
+            label="2"
           />
           <FormControlLabel
             disabled={submitted}
-            value="15"
+            value="3"
             control={<Radio />}
-            label="15"
+            label="3"
           />
           <FormControlLabel
             disabled={submitted}
-            value="17"
+            value="4"
             control={<Radio />}
-            label="17"
+            label="4"
           />
         </RadioGroup>
         {submitted && (
@@ -205,7 +205,7 @@ function TestPage() {
             fullWidth
             disabled={isSubmitDisabled} // Disable if name or answers are missing
           >
-            Submit Answer
+            ส่งข้อสอบ
           </Button>
         </Box>
       )}
@@ -214,7 +214,7 @@ function TestPage() {
       {submitted && (
         <Box sx={{ marginTop: 2 }}>
           <Typography variant="h6" align="center">
-            Name: {name} | Score: {score} / 2
+            คุณ: {name}   สอบได้คะแนน: {score} / 2
           </Typography>
           <Box sx={{ marginTop: 2 }}>
             <Button
@@ -223,7 +223,7 @@ function TestPage() {
               onClick={handleStartTest}
               fullWidth
             >
-              Start Test
+              สอบอีกครั้ง
             </Button>
           </Box>
         </Box>
