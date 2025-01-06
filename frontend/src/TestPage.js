@@ -60,16 +60,15 @@ function TestPage() {
 
     try {
       // Make sure you're using the correct HTTP URL for your backend
-      const response = await fetch("http://localhost:7266/api/ScoreData/add", {
+      const response = await fetch("https://localhost:7266/api/ScoreData/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, score: calculatedScore }), // Send the actual score
       });
 
       if (response.ok) {
-        const data = await response.json();
         setResponseMessage(
-          `Score submitted successfully! Server response: ${data.message}`
+          `Score submitted successfully!`
         );
       } else {
         setResponseMessage("Failed to submit score. Please try again.");
