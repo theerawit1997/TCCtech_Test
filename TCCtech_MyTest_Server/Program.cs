@@ -10,7 +10,19 @@ builder.Services.AddScoped<MySqlDbContext>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Enable CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")  // React app URL
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
+app.UseCors("AllowReactApp");  // Ensure this is applied
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
